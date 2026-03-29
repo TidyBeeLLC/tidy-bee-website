@@ -14,8 +14,10 @@ nav a {margin:0 15px; text-decoration:none; color:#555; font-weight:bold;}
 .hero {padding:50px 20px; text-align:center; background:#fff;}
 .hero h2 {color:#ffb347;}
 .section {padding:40px 20px; max-width:900px; margin:auto;}
-.services ul {list-style:none; padding:0;}
-.services li {background:#fff7f8; margin:10px 0; padding:15px; border-left:5px solid #ffe066;}
+.service-item {background:#fff7f8; margin:10px 0; padding:15px; border-left:5px solid #ffe066; border-radius:5px; cursor:pointer;}
+.service-item h3 {margin:0; color:#ff9aa2;}
+.service-item:hover {background:#fff0f3;}
+.description {display:none; margin-top:10px; color:#555;}
 .contact {background:#fff7f8; padding:40px 20px; border-radius:15px; max-width:600px; margin:40px auto;}
 input, textarea {width:100%; padding:10px; margin:10px 0; border:1px solid #ddd; border-radius:5px; box-sizing:border-box;}
 button {background:#ff9aa2; color:white; border:none; padding:12px 20px; cursor:pointer; border-radius:5px; width:100%; font-size:1em;}
@@ -44,57 +46,48 @@ footer {text-align:center; padding:20px; background:#fff0f3; font-size:14px;}
 <section id="services" class="section services">
     <h2>Our Services</h2>
 
-    <div class="service-item">
-        <h3 onclick="toggleDescription(this)">Residential Cleaning</h3>
-        <p class="description" style="display:none;">
+    <div class="service-item" onclick="toggleDescription(this)">
+        <h3>Residential Cleaning</h3>
+        <p class="description">
             Comprehensive cleaning of your home including bedrooms, bathrooms, kitchen, and living areas. We dust, vacuum, mop, sanitize surfaces, and make your home sparkle.
         </p>
     </div>
 
-    <div class="service-item">
-        <h3 onclick="toggleDescription(this)">Deep Cleaning</h3>
-        <p class="description" style="display:none;">
+    <div class="service-item" onclick="toggleDescription(this)">
+        <h3>Deep Cleaning</h3>
+        <p class="description">
             A thorough top-to-bottom cleaning of your home. Includes baseboards, behind appliances, detailed bathroom sanitation, and areas that are often overlooked.
         </p>
     </div>
 
-    <div class="service-item">
-        <h3 onclick="toggleDescription(this)">One-Time Cleaning</h3>
-        <p class="description" style="display:none;">
+    <div class="service-item" onclick="toggleDescription(this)">
+        <h3>One-Time Cleaning</h3>
+        <p class="description">
             Perfect for special events, after parties, or just to refresh your home. We focus on all high-traffic areas to leave your space clean and welcoming.
         </p>
     </div>
 
-    <div class="service-item">
-        <h3 onclick="toggleDescription(this)">Move-In / Move-Out Cleaning</h3>
-        <p class="description" style="display:none;">
+    <div class="service-item" onclick="toggleDescription(this)">
+        <h3>Move-In / Move-Out Cleaning</h3>
+        <p class="description">
             Ideal for tenants or landlords. We clean every corner including cabinets, appliances, floors, and bathrooms to ensure a spotless home for moving in or out.
         </p>
     </div>
 
-    <div class="service-item">
-        <h3 onclick="toggleDescription(this)">Small Commercial Cleaning</h3>
-        <p class="description" style="display:none;">
+    <div class="service-item" onclick="toggleDescription(this)">
+        <h3>Small Commercial Cleaning</h3>
+        <p class="description">
             Keep your small business clean and presentable. Services include dusting, trash removal, vacuuming, sanitizing surfaces, and maintaining a professional environment.
         </p>
     </div>
 
-    <div class="service-item">
-        <h3 onclick="toggleDescription(this)">Post-Construction Cleaning</h3>
-        <p class="description" style="display:none;">
+    <div class="service-item" onclick="toggleDescription(this)">
+        <h3>Post-Construction Cleaning</h3>
+        <p class="description">
             Remove dust, debris, and leftover construction materials. Includes thorough cleaning of floors, windows, surfaces, and any hard-to-reach areas after renovations or builds.
         </p>
     </div>
 </section>
-
-<!-- Accordion Script -->
-<script>
-function toggleDescription(element) {
-    const desc = element.nextElementSibling;
-    // Toggle visibility
-    desc.style.display = desc.style.display === 'none' ? 'block' : 'none';
-}
-</script>
 
 <section class="section">
     <h2>Why Choose Tidy Bee?</h2>
@@ -107,11 +100,8 @@ function toggleDescription(element) {
     <p><strong>Phone:</strong> 920-393-0176</p>
     <p><strong>Email:</strong> tidy.bee.llccleaning@gmail.com</p>
 
-    <!-- Formspree Ready Form -->
     <form action="https://formspree.io/f/mwvwlwgb" method="POST">
-        <!-- Optional: Make email subject clear -->
         <input type="hidden" name="_subject" value="New Cleaning Request - Tidy Bee LLC">
-
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="5" placeholder="What do you need cleaned?" required></textarea>
@@ -122,6 +112,13 @@ function toggleDescription(element) {
 <footer>
     <p>© 2026 Tidy Bee LLC | Green Bay, WI</p>
 </footer>
+
+<script>
+function toggleDescription(element) {
+    const desc = element.querySelector('.description');
+    desc.style.display = desc.style.display === 'none' ? 'block' : 'none';
+}
+</script>
 
 </body>
 </html>
