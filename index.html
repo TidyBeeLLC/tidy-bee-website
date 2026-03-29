@@ -43,15 +43,58 @@ footer {text-align:center; padding:20px; background:#fff0f3; font-size:14px;}
 
 <section id="services" class="section services">
     <h2>Our Services</h2>
-    <ul>
-        <li>Residential Cleaning</li>
-        <li>Deep Cleaning</li>
-        <li>One-Time Cleaning</li>
-        <li>Move-In / Move-Out Cleaning</li>
-        <li>Small Commercial Cleaning</li>
-        <li>Post-Construction Cleaning</li>
-    </ul>
+
+    <div class="service-item">
+        <h3 onclick="toggleDescription(this)">Residential Cleaning</h3>
+        <p class="description" style="display:none;">
+            Comprehensive cleaning of your home including bedrooms, bathrooms, kitchen, and living areas. We dust, vacuum, mop, sanitize surfaces, and make your home sparkle.
+        </p>
+    </div>
+
+    <div class="service-item">
+        <h3 onclick="toggleDescription(this)">Deep Cleaning</h3>
+        <p class="description" style="display:none;">
+            A thorough top-to-bottom cleaning of your home. Includes baseboards, behind appliances, detailed bathroom sanitation, and areas that are often overlooked.
+        </p>
+    </div>
+
+    <div class="service-item">
+        <h3 onclick="toggleDescription(this)">One-Time Cleaning</h3>
+        <p class="description" style="display:none;">
+            Perfect for special events, after parties, or just to refresh your home. We focus on all high-traffic areas to leave your space clean and welcoming.
+        </p>
+    </div>
+
+    <div class="service-item">
+        <h3 onclick="toggleDescription(this)">Move-In / Move-Out Cleaning</h3>
+        <p class="description" style="display:none;">
+            Ideal for tenants or landlords. We clean every corner including cabinets, appliances, floors, and bathrooms to ensure a spotless home for moving in or out.
+        </p>
+    </div>
+
+    <div class="service-item">
+        <h3 onclick="toggleDescription(this)">Small Commercial Cleaning</h3>
+        <p class="description" style="display:none;">
+            Keep your small business clean and presentable. Services include dusting, trash removal, vacuuming, sanitizing surfaces, and maintaining a professional environment.
+        </p>
+    </div>
+
+    <div class="service-item">
+        <h3 onclick="toggleDescription(this)">Post-Construction Cleaning</h3>
+        <p class="description" style="display:none;">
+            Remove dust, debris, and leftover construction materials. Includes thorough cleaning of floors, windows, surfaces, and any hard-to-reach areas after renovations or builds.
+        </p>
+    </div>
 </section>
+
+<!-- Accordion Script -->
+<script>
+function toggleDescription(element) {
+    const desc = element.nextElementSibling;
+    // Toggle visibility
+    desc.style.display = desc.style.display === 'none' ? 'block' : 'none';
+}
+</script>
 
 <section class="section">
     <h2>Why Choose Tidy Bee?</h2>
